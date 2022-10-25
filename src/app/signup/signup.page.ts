@@ -22,10 +22,12 @@ export class SignupPage implements OnInit {
   ngOnInit() {
   }
   user: any;
-
+// Envoyer les champs recuperer de la formulaire login HTML pour enregister (creation du compte) l'utilisateur
   registerUser(form) {
 
-
+// utlisier la service authService pour authentifier l'utilisateur
+    // on a utliser signup de firebase qui utlise seulement un login et mot de passe et il va ajouter un uid alors on a ajouter la methode addProfile
+    // pour creer un profile complet 
     this.authService.RegisterUser(form)
       .then((res) => {
         console.log(form)
@@ -36,7 +38,7 @@ export class SignupPage implements OnInit {
 
         }
         console.log("user "+this.user)
-       
+       // on a ajouter uid aux champs des formulaire puis on a enregister les champs dans firebase pour abvoir un profile complet
         this.authService.addProfile(this.user).subscribe({
           next: (data) => {
             console.log(data)
