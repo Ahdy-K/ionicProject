@@ -38,13 +38,15 @@ export class AnnoncesService {
   //     image: 'https://picsum.photos/200/300',
   //   },
   // ];
+  
+  // recuperer tout les annonces
   getAllAnnonces(): Observable<any> {
-    //return this.annonces;
-    //this.httpClient.get('https://mydatabase-65630.firebaseio.com');
+    
     return this.httpClient.get(
       'https://gestion-des-annonces-default-rtdb.europe-west1.firebasedatabase.app/annonce.json'
     );
   }
+  // ajouter un annonce
   addAnnonce(annonce: any): Observable<any> {
     return this.httpClient.post(
       'https://gestion-des-annonces-default-rtdb.europe-west1.firebasedatabase.app/annonce.json',
