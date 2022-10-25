@@ -8,16 +8,21 @@ import { IonSlides } from '@ionic/angular';
   styleUrls: ['annonces.page.scss'],
 })
 export class AnnoncePage implements OnInit {
+  // dans la page home on va utliser les segments et les slides pour afficher dans chaque slide
+  // des differents interfaces comme tout les annonces ou bien les annonces d'utlisateur connecté ou le profile de user
   @ViewChild('slides', { static: true }) slider: IonSlides;
   listAnnonces = [];
   segment = 0;
   userEmail: string;
+  // cette methode va capturer le changement du segment
+  // pour changer le contenu
   async segmentChanged(ev: any) {
     await this.slider.slideTo(this.segment);
   }
   async slideChanged() {
     this.segment = await this.slider.getActiveIndex();
   }
+  // cette methode va retourner tout les annonces
   allAnnonces() {
     return this.announceService.getAllAnnonces().subscribe({
       next: (data) => {
