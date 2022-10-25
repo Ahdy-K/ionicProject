@@ -14,12 +14,15 @@ export class AddAnnoncePage implements OnInit {
     private annoncesService: AnnoncesService,
     private router: Router
   ) {}
-
+// on doit récuperer l'id du user pour l'ajouter
+  // a l'annonce id du user pour que chaque annonce appartient a un user
+  // l'id du user est stocké dans le local storageapres l'authentification du user
   ngOnInit() {
     this.userEmail = window.localStorage.getItem('email');
   }
   addAnnonce(formValue: any) {
-    //get Storage User.username
+    //ajouter l'id du user et les champs récuperer par le formulaire
+    // a la variable annonce puis on le l'enregistre.
 
     this.annonce = { createdBy: this.userEmail, ...formValue };
     return this.annoncesService.addAnnonce(this.annonce).subscribe({
