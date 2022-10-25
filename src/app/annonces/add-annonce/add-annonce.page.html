@@ -18,12 +18,14 @@
       <ion-row justify-content-center>
         <ion-col size="10" offset="1" class="container">
           <div text-center class="ion-margin-bottom" style="margin-top: 15%">
-            <!--Formulaire d'ajout d'un annonce -->
+            <!--Formulaire d'ajout d'un annonce
+              on va recuperer les champs du formulaire et l'envoyer au fichier TS dans le parametre du fonction addAnnonce()  -->
             <form
               #f="ngForm"
               (ngSubmit)="addAnnonce(f.value)"
               class="form-group"
             >
+              <!-- on va afficher les elements du formulaires on utlisant les ion-item-->
               <ion-item class="ion-margin-bottom">
                 <ion-input
                   placeholder="Title"
