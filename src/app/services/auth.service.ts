@@ -13,7 +13,13 @@ export class AuthService {
 
   ngFireAuth: any;
 
-
+  // pour authentifier nos utlisateur on utliser AngularFireAuth
+  // puisqu'il contient plusieurs fonctions prédéfini
+  /**
+  * signInWithEmailAndPassword: Authentifier avec username et password : puis on ajoute email au localStorage pour utliser ulterieurement
+  * createUserWithEmailAndPassword: creer un utilisateur avec un mot de passe et email 
+   * c'est pour quoi on a ajouter la methode addProfile pour ajouter d'autre champs a l'utilisateur
+  */
   constructor(public auth: AngularFireAuth, private httpClient: HttpClient) { }
 
 
