@@ -1,3 +1,4 @@
+<!--Header d'ajout d'annonce -->
 <ion-header color="dark">
   <ion-toolbar class="wrapper">
     <ion-buttons slot="start">
@@ -17,6 +18,7 @@
       <ion-row justify-content-center>
         <ion-col size="10" offset="1" class="container">
           <div text-center class="ion-margin-bottom" style="margin-top: 15%">
+            <!--Formulaire d'ajout d'un annonce -->
             <form
               #f="ngForm"
               (ngSubmit)="addAnnonce(f.value)"
