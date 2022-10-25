@@ -1,4 +1,5 @@
 <ion-header [translucent]="true">
+  <!-- button ion-back-button avec defaultHref pour naviguer vers la page precedente-->
   <ion-toolbar
     ><ion-buttons slot="start"
       ><ion-back-button
@@ -9,6 +10,7 @@
     <ion-title class="d-inline-flex p-2 bd-highlight">
       Annonce Details</ion-title
     >
+    <!-- le boutton du suppression va afficher seulement si l'utlisateur est le createur de l'annonce-->
     <ion-button
       *ngIf="userEmail==annonce.createdBy"
       slot="end"
